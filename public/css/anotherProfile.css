@@ -1,0 +1,128 @@
+.g-clearfix {
+  content: "";
+  display: table !important;
+  clear: both; }
+
+.g-hidden {
+  display: none; }
+
+.g-input-field-error {
+  outline: 2px solid red; }
+
+BODY {
+  margin: 0; }
+
+.l-profile__user-avatar, .l-profile__user-name, .l-profile__user-profession {
+  text-align: center;
+  margin-top: 20px; }
+
+.b-user-avatar {
+  display: inline-block;
+  position: relative;
+  text-align: center; }
+
+.b-user-avatar__image {
+  border-radius: 50%;
+  border: 2px solid grey;
+  display: block;
+  width: 80px;
+  height: 80px; }
+
+.l-profile__trusted-count {
+  text-align: center; }
+
+.b-trusted-count {
+  position: relative;
+  top: -7px;
+  display: inline-block;
+  background-color: rgba(29, 29, 29, 0.62);
+  padding: 1px 10px;
+  border-radius: 40%; }
+
+.b-trusted-count__text {
+  font-size: 0.85rem;
+  color: white; }
+
+.b-user-name {
+  display: inline-block; }
+
+.b-user-profession {
+  display: inline-block; }
+
+.b-user-profession__icon {
+  vertical-align: middle;
+  display: inline-block; }
+
+.b-user-profession__text {
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: green; }
+
+.b-user-profession__icon-image {
+  display: block; }
+
+.l-profile__icons {
+  margin-top: 20px; }
+
+.b-profile-icons {
+  text-align: center;
+  background-color: #ECECEC;
+  padding: 5px 0; }
+
+.b-profile-icons__icon {
+  display: inline-block;
+  width: 75px;
+  height: 60px;
+  padding: 0 5px;
+  background: center no-repeat; }
+
+.profile-icons__icon--incative {
+  opacity: 0.5; }
+
+.profile-icons__icon-trusted {
+  background-image: url(../img/trusted_big.png); }
+
+.profile-icons__icon-profile {
+  background-image: url(../img/profile_icon.png); }
+
+.l-profile__comments {
+  margin-top: 5px; }
+
+.b-comment {
+  margin-bottom: 5px; }
+  .b-comment:after {
+    content: "";
+    display: table !important;
+    clear: both; }
+
+.b-comment__user-avatar {
+  float: left;
+  padding: 10px; }
+
+.b-comment-body {
+  overflow: auto; }
+
+.b-comment-body__header {
+  padding: 5px; }
+
+.b-comment-body__commenter-name {
+  display: inline-block; }
+
+.b-comment-body__text {
+  padding: 5px; }
+
+.l-profile__contacts {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 20px; }
+
+.b-contacts {
+  font-size: 1.3rem; }
+
+.b-contacts__contact {
+  margin-top: 20px; }
+
+.b-contacts__contact-value {
+  margin-top: 10px; }

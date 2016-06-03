@@ -1,0 +1,136 @@
+.g-clearfix {
+  content: "";
+  display: table !important;
+  clear: both; }
+
+.g-hidden {
+  display: none; }
+
+.g-input-field-error {
+  outline: 2px solid red; }
+
+BODY {
+  margin: 0; }
+
+.main-page__profile {
+  width: 75%;
+  margin: 0 auto; }
+
+.profile__main-info {
+  text-align: center; }
+
+.main-info {
+  display: inline-block; }
+
+.user-avatar {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  background: url("https://placehold.it/100x100"); }
+
+.main-info__user-name {
+  padding: 10px 0; }
+
+.user-name {
+  position: relative; }
+
+.user-name__text {
+  height: 20px;
+  display: inline-block; }
+
+.user-name__edit-button {
+  position: absolute;
+  right: -30px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: url("https://www.librarything.com/pics/edit-pencil.gif"); }
+
+.user-name__user-name-edit {
+  position: relative; }
+
+.user-name-edit__edit-field {
+  display: inline-block;
+  height: 20px;
+  padding: 0;
+  border: 1px solid grey;
+  width: 200px; }
+
+.user-name-edit__confirm-button {
+  position: absolute;
+  right: -60px;
+  top: 0; }
+
+.confirm-button {
+  text-align: center;
+  border-radius: 6px;
+  float: left;
+  display: inline-block;
+  margin-left: 10px;
+  width: 50px;
+  height: 20px;
+  border: 1px solid grey; }
+
+.confirm-button__text {
+  vertical-align: middle; }
+
+.button-add-prof {
+  display: inline-block;
+  border-radius: 6px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid grey; }
+
+.profile__contacts {
+  display: inline-block;
+  margin-top: 40px; }
+
+.user-mobile-number__number {
+  margin-top: 10px; }
+
+.contacts__user-email {
+  margin-top: 20px; }
+
+.user-email__title {
+  display: inline-block;
+  position: relative; }
+
+.user-email__email {
+  margin-top: 10px; }
+
+.user-email-edit-elements {
+  position: relative;
+  margin-top: 10px; }
+
+.user-email__edit-button {
+  position: absolute;
+  right: -30px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: url("https://www.librarything.com/pics/edit-pencil.gif"); }
+
+.user-email-edit__edit-field {
+  display: inline-block;
+  height: 20px;
+  padding: 0;
+  border: 1px solid grey;
+  width: 200px; }
+
+.user-email-edit__confirm-button {
+  position: absolute;
+  right: -60px;
+  top: 0; }
+
+.confirm-button {
+  text-align: center;
+  border-radius: 6px;
+  float: left;
+  display: inline-block;
+  margin-left: 10px;
+  width: 50px;
+  height: 20px;
+  border: 1px solid grey; }
+
+.confirm-button__text {
+  vertical-align: middle; }

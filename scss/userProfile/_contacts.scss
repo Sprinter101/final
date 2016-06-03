@@ -1,0 +1,66 @@
+.profile__contacts {
+	display: inline-block;
+	margin-top: 40px;
+}
+
+.contacts {}
+
+.user-mobile-number__number {
+	margin-top: 10px;
+}
+
+.contacts__user-email {
+	margin-top: 20px;
+}
+
+.user-email__title {
+	display: inline-block;
+	position: relative;
+}
+
+.user-email__email {
+	margin-top: 10px;
+}
+
+.user-email-edit-elements {
+	position: relative;
+	margin-top: 10px;
+}
+
+.user-email__edit-button {
+	position: absolute;
+	right: -30px;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	background: $edit-button-picture;
+}
+
+.user-email-edit__edit-field {
+	display: inline-block;
+	height: 20px;
+	padding: 0;
+	border: 1px solid grey;
+	width: 200px;
+}
+
+.user-email-edit__confirm-button {
+	position: absolute;
+	right: -60px;
+	top: 0;	
+}
+
+.confirm-button {
+	text-align: center;
+	border-radius: 6px;
+	float: left;
+	display: inline-block;
+	margin-left: 10px;
+	width: 50px;
+	height: 20px;
+	border: 1px solid grey;
+}
+
+.confirm-button__text {	
+	vertical-align: middle;
+}

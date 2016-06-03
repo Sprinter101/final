@@ -1,0 +1,16 @@
+@import 'globals-and-variables';
+
+BODY {
+  margin: 0;
+}
+
+.main-page__profile {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.profile {}
+
+@import 'userProfile/main-info';
+
+@import 'userProfile/contacts'; 

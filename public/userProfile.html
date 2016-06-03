@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Профиль</title>
+  <link rel="stylesheet" href="css/userProfile.css">
+  <script src="js/jquery-2.2.3.min.js"></script>
+  <!-- <script src="js/jq_script.js"></script> -->
+  <script src="closure-library/closure/goog/base.js"></script>
+  <script src="js/userProfile/my-deps.js"></script>
+</head>
+<body class="main-page">
+  <div class="main-page__profile">
+    <div class="profile">
+      <div class="profile__main-info">
+        <div class="main-info">
+          <div class="main-info__user-avatar">
+            <div class="user-avatar"></div>
+          </div>
+          <div class="main-info__user-name">
+            <div class="user-name">
+              <div class="js-user-name-info-elements">
+                <div class="user-name__text">Вячеслав Архангельский
+                </div>
+                <div class="user-name__edit-button"></div>
+              </div>
+              <div class="user-name__user-name-edit js-user-name-edit-elements g-hidden">
+                <input type="text" class="user-name-edit__edit-field" placeholder="Введите ваше имя и фамилию">
+                <div class="user-name-edit__confirm-button">
+                  <div class="confirm-button">
+                    <span class="confirm-button__text">OK</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-info__button-add-prof">
+            <div class="button-add-prof">
+              Добавить профессию
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile__contacts">
+        <div class="contacts">
+          <div class="user-mobile-number">
+            <div class="user-mobile-number__title">
+              Мобильный телефон
+            </div>
+            <div class="user-mobile-number__number">
+              +79163546789
+            </div>
+          </div>
+          <div class="contacts__user-email">
+            <div class="user-email">
+              <div class="user-email__title">
+                <div class="user-email__title-text">
+                  Электронная почта
+                </div>
+                <div class="user-email__edit-button"></div>
+              </div>
+              <div class="user-email__email">
+                specter978@gmail.com
+              </div>
+              <div class="user-email-edit-elements js-user-email-edit-elements g-hidden">
+                <input type="text" class="user-email-edit__edit-field" placeholder="Введите вашу почту">
+                <div class="user-email-edit__confirm-button">
+                  <div class="confirm-button">
+                    <span class="confirm-button__text">OK</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/userProfile/script.js"></script>
+</body>
+</html>

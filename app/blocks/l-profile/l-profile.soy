@@ -1,0 +1,132 @@
+{namespace tr.lProfile.Template}
+
+/**
+* Main template
+*/
+{template .base autoescape="strict" kind="html"}
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		{call .head_ /}
+	</head>
+	<body>
+		{call .body_ /}
+	</body>	
+{/template}
+
+/**
+* Head template
+*/
+{template .head_ autoescape="strict" kind="html" private="true"}
+	<meta charset="UTF-8">
+	<title>Чужой профиль</title>
+	<link rel="stylesheet" href="css/anotherProfile.css">
+{/template}
+
+/**
+* Body template
+*/
+{template .body_ autoescape="strict" kind="html" private="true"}
+	<div class="l-profile">
+
+		<div class="l-profile__info">
+			<div class="l-profile__user-avatar">
+				<div class="b-user-avatar">
+					<img class="b-user-avatar__image" src="img/image_empty_profile.png" alt="">
+				</div>        
+			</div>
+			<div class="l-profile__trusted-count">
+				<div class="b-trusted-count">
+					<span class="b-trusted-count__text">100</span>
+				</div>
+			</div>
+			<div class="l-profile__user-name">
+				<div class="b-user-name">
+					<div class="b-user-name__text">
+						Александр Константинопольский
+					</div>
+				</div>
+			</div>
+			<div class="l-profile__user-profession">
+				<div class="b-user-profession">
+					<div class="b-user-profession__icon">
+						<img src="img/trusted_normal.png" alt="" class="b-user-profession__icon-image">
+					</div>
+					<div class="b-user-profession__text">Таксист</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="l-profile__icons">
+			<div class="b-profile-icons">
+				<div class="b-profile-icons__icon profile-icons__icon-trusted"></div>
+				<div class="b-profile-icons__icon profile-icons__icon-profile"></div>
+			</div>
+		</div>
+
+		<div class="l-profile__comments">
+			<div class="b-comments">
+
+				<div class="b-comments__comment">
+					<div class="b-comment">
+						<div class="b-comment__user-avatar">
+							<div class="b-user-avatar">
+								<img class="b-user-avatar__image" src="img/image_empty_profile.png" alt="">
+							</div>
+						</div>
+						<div class="b-comment-body">
+							<div class="b-comment-body__header">
+								<div class="b-comment-body__commenter-name">Иванов Алексей</div>
+							</div>
+							<div class="b-comment-body__text">С тех пор, как познакомился с Александром, перестал пользоваться убером. Ведь гораздо приятнее проехаться с уже ставшим другом. Никогда не опаздывает и берёт совсем недорого
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="b-comments__comment">
+					<div class="b-comment">
+						<div class="b-comment__user-avatar">
+							<div class="b-user-avatar">
+								<img class="b-user-avatar__image" src="img/image_empty_profile.png" alt="">
+							</div>
+						</div>
+						<div class="b-comment-body">
+							<div class="b-comment-body__header">
+								<div class="b-comment-body__commenter-name">Иванов Алексей</div>
+							</div>
+							<div class="b-comment-body__text">С тех пор, как познакомился с Александром, перестал пользоваться убером. Ведь гораздо приятнее проехаться с уже ставшим другом. Никогда не опаздывает и берёт совсем недорого
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="l-profile__contacts">
+			<div class="b-contacts">
+
+				<div class="b-contacts__contact">
+					<div class="b-contacts__contact-type">
+						Мобильный телефон
+					</div>
+					<div class="b-contacts__contact-value">
+						+79163546789
+					</div>
+				</div>
+
+				<div class="b-contacts__contact">
+					<div class="b-contacts__contact-type">
+						Электронная почта
+					</div>
+					<div class="b-contacts__contact-value">
+						sprinter978@gmail.com
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+{/template}

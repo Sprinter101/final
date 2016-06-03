@@ -1,0 +1,38 @@
+.l-profile__comments {
+	margin-top: 5px;
+}
+
+.b-comments {
+	
+}
+
+.b-comment {
+	margin-bottom: 5px;
+
+	&:after {
+		content: "";
+		display: table !important;
+		clear: both;
+	}
+}
+
+.b-comment__user-avatar {
+	float: left;
+	padding: 10px;
+}
+
+.b-comment-body {
+	overflow: auto;
+}
+
+.b-comment-body__header {
+	padding: 5px;
+}
+
+.b-comment-body__commenter-name {
+	display: inline-block;	
+}
+
+.b-comment-body__text {
+	padding: 5px;
+}

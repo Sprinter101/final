@@ -1,0 +1,29 @@
+.l-profile__icons {
+	margin-top: 20px;
+}
+
+.b-profile-icons {
+	text-align: center;	
+	background-color: #ECECEC;
+	padding: 5px 0;
+}
+
+.b-profile-icons__icon {
+	display: inline-block;
+	width: 75px;
+	height: 60px;
+	padding: 0 5px;	
+	background: center no-repeat;
+}
+
+.profile-icons__icon--incative {
+	opacity: 0.5;
+}
+
+.profile-icons__icon-trusted {
+	background-image: url(../img/trusted_big.png);
+}
+
+.profile-icons__icon-profile {
+	background-image: url(../img/profile_icon.png);
+}

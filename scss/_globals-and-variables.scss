@@ -1,0 +1,15 @@
+.g-clearfix {
+	content: "";
+	display: table !important;
+	clear: both;
+}
+
+.g-hidden {
+	display: none;
+}
+
+.g-input-field-error {
+	outline: 2px solid red;
+}
+
+$edit-button-picture: url('https://www.librarything.com/pics/edit-pencil.gif');

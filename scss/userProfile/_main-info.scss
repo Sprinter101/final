@@ -1,0 +1,84 @@
+.profile__main-info {
+	text-align: center;
+}
+
+.main-info {
+	//border: 1px solid red;
+	display: inline-block;
+}
+
+.main-info__user-avatar {}
+
+.user-avatar {
+	height: 100px;
+	width: 100px;
+	margin: 0 auto;
+	background: url('https://placehold.it/100x100');
+}
+
+.main-info__user-name{
+	padding: 10px 0;
+}
+
+.user-name {
+	position: relative;
+}
+
+.user-name__text {
+	height: 20px;
+	display: inline-block;
+}
+
+.user-name__edit-button {
+	//float: left;
+	//margin-left: 10px;
+	position: absolute;
+	right: -30px;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	background: $edit-button-picture;
+}
+
+.user-name__user-name-edit {
+	position: relative;
+}
+
+.user-name-edit__edit-field {
+	display: inline-block;
+	height: 20px;
+	padding: 0;
+	border: 1px solid grey;
+	width: 200px;
+}
+
+.user-name-edit__confirm-button {
+	position: absolute;
+	right: -60px;
+	top: 0;	
+}
+
+.confirm-button {
+	text-align: center;
+	border-radius: 6px;
+	float: left;
+	display: inline-block;
+	margin-left: 10px;
+	width: 50px;
+	height: 20px;
+	border: 1px solid grey;
+}
+
+.confirm-button__text {	
+	vertical-align: middle;
+}
+
+.main-info__button-add-prof {}
+
+.button-add-prof {
+	display: inline-block;
+	border-radius: 6px;
+	text-align: center;
+	padding: 5px;
+	border: 1px solid grey;
+}
