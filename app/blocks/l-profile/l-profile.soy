@@ -31,9 +31,7 @@
 
 		<div class="l-profile__info">
 			<div class="l-profile__user-avatar">
-				<div class="b-user-avatar">
-					<img class="b-user-avatar__image" src="img/image_empty_profile.png" alt="">
-				</div>        
+				{call .userAvatar_ /}      
 			</div>
 			<div class="l-profile__trusted-count">
 				<div class="b-trusted-count">
@@ -68,38 +66,12 @@
 			<div class="b-comments">
 
 				<div class="b-comments__comment">
-					<div class="b-comment">
-						<div class="b-comment__user-avatar">
-							<div class="b-user-avatar">
-								<img class="b-user-avatar__image" src="img/image_empty_profile.png" alt="">
-							</div>
-						</div>
-						<div class="b-comment-body">
-							<div class="b-comment-body__header">
-								<div class="b-comment-body__commenter-name">Иванов Алексей</div>
-							</div>
-							<div class="b-comment-body__text">С тех пор, как познакомился с Александром, перестал пользоваться убером. Ведь гораздо приятнее проехаться с уже ставшим другом. Никогда не опаздывает и берёт совсем недорого
-							</div>
-						</div>
-					</div>
+					{call .comment_ /}
 				</div>
 
 				<div class="b-comments__comment">
-					<div class="b-comment">
-						<div class="b-comment__user-avatar">
-							<div class="b-user-avatar">
-								<img class="b-user-avatar__image" src="img/image_empty_profile.png" alt="">
-							</div>
-						</div>
-						<div class="b-comment-body">
-							<div class="b-comment-body__header">
-								<div class="b-comment-body__commenter-name">Иванов Алексей</div>
-							</div>
-							<div class="b-comment-body__text">С тех пор, как познакомился с Александром, перестал пользоваться убером. Ведь гораздо приятнее проехаться с уже ставшим другом. Никогда не опаздывает и берёт совсем недорого
-							</div>
-						</div>
-					</div>
-				</div>
+					{call .comment_ /}
+				</div>			
 
 			</div>
 		</div>
@@ -128,5 +100,33 @@
 			</div>
 		</div>
 
+	</div>
+{/template}
+
+
+/**
+* Comment template
+*/
+{template .comment_ autoescape="strict" kind="html" private="true"}
+	<div class="b-comment">
+		<div class="b-comment__user-avatar">
+			{call .userAvatar_ /}
+		</div>
+		<div class="b-comment-body">
+			<div class="b-comment-body__header">
+				<div class="b-comment-body__commenter-name">Иванов Алексей</div>
+			</div>
+			<div class="b-comment-body__text">С тех пор, как познакомился с Александром, перестал пользоваться убером. Ведь гораздо приятнее проехаться с уже ставшим другом. Никогда не опаздывает и берёт совсем недорого
+			</div>
+		</div>
+	</div>
+{/template}
+
+/**
+* userAvatar template
+*/
+{template .userAvatar_ autoescape="strict" kind="html" private="true"}
+	<div class="b-user-avatar">
+		<img class="b-user-avatar__image" src="img/image_empty_profile.png" alt="">
 	</div>
 {/template}
