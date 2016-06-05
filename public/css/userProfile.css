@@ -1,13 +1,13 @@
 .g-clearfix {
-  content: "";
+  content: "" !important;
   display: table !important;
-  clear: both; }
+  clear: both !important; }
 
 .g-hidden {
-  display: none; }
+  display: none !important; }
 
 .g-input-field-error {
-  outline: 2px solid red; }
+  outline: 2px solid red !important; }
 
 BODY {
   margin: 0; }

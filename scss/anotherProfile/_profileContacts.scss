@@ -4,14 +4,27 @@
 	margin-top: 20px;
 }
 
-.b-contacts {
+.b-contacts__contact-type, .b-contacts__contact-value {
 	font-size: 1.3rem;
 }
 
-.b-contacts__contact {
+.b-contacts__contact {	
 	margin-top: 20px;
 }
 
+.b-contacts__contact-wrapper {
+	position: relative;
+	display: inline-block;
+}
+
 .b-contacts__contact-value {
+	margin-top: 10px;
+}
+
+.b-contact-email__edit-button {
+	bottom: 0;
+}
+
+.b-contact-email__edit-elements {
 	margin-top: 10px;
 }

@@ -36,7 +36,53 @@
 }
 
 .b-user-name {
+	position: relative;
 	display: inline-block;
+	height: 22px;
+}
+
+.b-user-name__edit-button {
+	top: 0;
+}
+
+.b-edit-button {
+	cursor: pointer;
+	position: absolute;
+	right: -30px;
+	width: 20px;
+	height: 20px;
+	background: $edit-button-picture;
+}
+
+.b-edit-elements__edit-field {
+	position: relative;
+	display: inline-block;
+}
+
+.b-edit-elements__edit-input {
+	display: inline-block;
+	height: 20px;
+	padding: 0;
+	border: 1px solid grey;
+	width: 200px;
+}
+ 
+.b-edit-elements__confirm-button {
+	cursor: pointer;
+	font-size: 1rem;
+	position: absolute;
+	right: -60px;
+	top: 0;	
+	text-align: center;
+	border-radius: 6px;
+	margin-left: 10px;
+	width: 50px;
+	height: 20px;
+	border: 1px solid grey;
+}
+
+.b-edit-elements__confirm-button-text {	
+	vertical-align: middle;	
 }
 
 .b-user-profession {

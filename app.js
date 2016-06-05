@@ -21,7 +21,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', function(req, res) {
-	var html = soy.render('tr.lProfile.Template.base');
+	var html = soy.render('tr.lProfile.Template.base', {params: {name: "Руслан Иванцов"}});
 
     res.header('Content-Type', 'text/html; charset=utf-8');
     res.end(html);	
@@ -30,7 +30,3 @@ app.get('/', function(req, res) {
 app.listen(3000, function() {
     console.log('Running at port %s', 3000);
 });
-
-/*, {params: {
-		profession: req.params.profession
-	}}*/
