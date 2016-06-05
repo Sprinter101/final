@@ -11,6 +11,7 @@
 	</head>
 	<body>
 		{call .body_ /}
+		{call .footer_ /}
 	</body>	
 {/template}
 
@@ -123,10 +124,17 @@
 {/template}
 
 /**
-* userAvatar template
+* User Avatar template
 */
 {template .userAvatar_ autoescape="strict" kind="html" private="true"}
 	<div class="b-user-avatar">
 		<img class="b-user-avatar__image" src="img/image_empty_profile.png" alt="">
 	</div>
+{/template}
+
+/**
+* Footer template
+*/
+{template .footer_ autoescape="strict" kind="html" private="true"}
+	<script src="js/l-profile.js"></script>
 {/template}
