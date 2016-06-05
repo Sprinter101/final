@@ -13,7 +13,7 @@
 		{call .head_ /}
 	</head>
 	<body>
-		{call .body_ /}
+		{call .body_ data="all"/}
 		{call .footer_ /}
 	</body>	
 {/template}
@@ -30,6 +30,7 @@
 
 /**
 * Body template
+* @param? params {?}
 */
 {template .body_ autoescape="strict" kind="html" private="true"}
 	<div class="l-profile">
@@ -46,7 +47,7 @@
 			<div class="l-profile__user-name">
 				<div class="b-user-name">
 					<div class="b-user-name__info-elements">
-						<div class="b-user-name__text">Александр Константинопольский</div>
+						<div class="b-user-name__text">{$params.name}</div>
 						<div class="b-edit-button b-user-name__edit-button"></div>
 					</div>
 					<div class="b-edit-elements b-user-name__edit-elements g-hidden">
