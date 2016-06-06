@@ -27216,8 +27216,6 @@ goog.scope(function() {
 			UserNameEdit.CssClass.NAME_EDIT_CONFIRM_BUTTON,
 			element
 			);
-
-		this.nameInfoElements_ = 12334;
 	};
 
 	/**
