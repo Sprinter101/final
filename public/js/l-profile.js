@@ -26919,129 +26919,187 @@ goog.require('goog.events');
 goog.require('goog.soy');
 goog.require('goog.ui.Component');
 
-tr.lProfile.EmailEdit = function() {
-  goog.base(this);
 
-  this.emailInfoText_ = null;
-  this.emailInfoEditButton_ = null;
-  this.emailEditElements_ = null;
-  this.emailEditTextfield_ = null;
-  this.emailEditConfirmButton_ = null;
+/**
+ * Email edit component
+ * @constructor
+ * @extends {goog.ui.Component}
+ */
+tr.lProfile.EmailEdit = function() {
+	goog.base(this);
+
+	/**
+	 * Dom element
+	 * @type {Element}
+	 * @private
+	*/
+	this.emailInfoText_ = null;
+
+	/**
+	 * Dom element
+	 * @type {Element}
+	 * @private
+	*/
+	this.emailInfoEditButton_ = null;
+	
+	/**
+	 * Dom element
+	 * @type {Element}
+	 * @private
+	*/
+	this.emailEditElements_ = null;
+
+	/**
+	 * Dom element
+	 * @type {Element}
+	 * @private
+	*/
+	this.emailEditTextfield_ = null;
+
+	/**
+	 * Dom element
+	 * @type {Element}
+	 * @private
+	*/
+	this.emailEditConfirmButton_ = null;
 };
 
 goog.inherits(tr.lProfile.EmailEdit, goog.ui.Component);
 
 goog.scope(function() {
-  var EmailEdit = tr.lProfile.EmailEdit;
+	var EmailEdit = tr.lProfile.EmailEdit;
 
-  EmailEdit.CssClass = {
-    ROOT: 'b-contact-email',
-    EMAIL_INFO_TEXT: 'b-contact-email__email',
-    EMAIL_INFO_EDIT_BUTTON: 'b-contact-email__edit-button',
-    EMAIL_EDIT_ELEMENTS: 'b-contact-email__edit-elements',
-    EMAIL_EDIT_TEXTFIELD: 'b-contact-email__edit-input',
-    EMAIL_EDIT_CONFIRM_BUTTON: 'b-contact-email__confirm-button',
-    HIDDEN: 'g-hidden'
-  };
 
-  EmailEdit.prototype.decorateInternal = function(element) {
-    goog.base(this, 'decorateInternal', element);
+	/**
+	 * CSS-class enum
+	 * @enum {string}
+	 */
+	EmailEdit.CssClass = {
+		ROOT: 'b-contact-email',
+		EMAIL_INFO_TEXT: 'b-contact-email__email',
+		EMAIL_INFO_EDIT_BUTTON: 'b-contact-email__edit-button',
+		EMAIL_EDIT_ELEMENTS: 'b-contact-email__edit-elements',
+		EMAIL_EDIT_TEXTFIELD: 'b-contact-email__edit-input',
+		EMAIL_EDIT_CONFIRM_BUTTON: 'b-contact-email__confirm-button',
+		HIDDEN: 'g-hidden'
+	};
 
-    this.emailInfoText_ = goog.dom.getElementByClass(
-        EmailEdit.CssClass.EMAIL_INFO_TEXT,
-        element
-    );
+	/**
+	 * @override
+	 */
+	EmailEdit.prototype.decorateInternal = function(element) {
+		goog.base(this, 'decorateInternal', element);
 
-    this.emailInfoEditButton_ = goog.dom.getElementByClass(
-        EmailEdit.CssClass.EMAIL_INFO_EDIT_BUTTON,
-        element
-    );
+		this.emailInfoText_ = goog.dom.getElementByClass(
+				EmailEdit.CssClass.EMAIL_INFO_TEXT,
+				element
+		);
 
-    this.emailEditElements_ = goog.dom.getElementByClass(
-        EmailEdit.CssClass.EMAIL_EDIT_ELEMENTS,
-        element
-    );
+		this.emailInfoEditButton_ = goog.dom.getElementByClass(
+				EmailEdit.CssClass.EMAIL_INFO_EDIT_BUTTON,
+				element
+		);
 
-    this.emailEditTextfield_ = goog.dom.getElementByClass(
-        EmailEdit.CssClass.EMAIL_EDIT_TEXTFIELD,
-        element
-    );
+		this.emailEditElements_ = goog.dom.getElementByClass(
+				EmailEdit.CssClass.EMAIL_EDIT_ELEMENTS,
+				element
+		);
 
-    this.emailEditConfirmButton_ = goog.dom.getElementByClass(
-        EmailEdit.CssClass.EMAIL_EDIT_CONFIRM_BUTTON,
-        element
-    );
-  };
+		this.emailEditTextfield_ = goog.dom.getElementByClass(
+				EmailEdit.CssClass.EMAIL_EDIT_TEXTFIELD,
+				element
+		);
 
-  EmailEdit.prototype.enterDocument = function() {
-    goog.base(this, 'enterDocument');
+		this.emailEditConfirmButton_ = goog.dom.getElementByClass(
+				EmailEdit.CssClass.EMAIL_EDIT_CONFIRM_BUTTON,
+				element
+		);
+	};
 
-    var handler = this.getHandler();
+	/**
+	 * @override
+	 */
+	EmailEdit.prototype.enterDocument = function() {
+		goog.base(this, 'enterDocument');
 
-    handler.listen(
-      this.emailInfoEditButton_,
-      goog.events.EventType.CLICK,
-      this.editButtonPressHandler_
-    );
+		var handler = this.getHandler();
 
-    handler.listen(
-      this.emailEditConfirmButton_,
-      goog.events.EventType.CLICK,
-      this.confirmButtonPressHandler_
-    );
+		handler.listen(
+			this.emailInfoEditButton_,
+			goog.events.EventType.CLICK,
+			this.editButtonPressHandler_
+		);
 
-    handler.listen(
-      this.emailEditTextfield_,
-      goog.events.EventType.KEYDOWN,
-      this.textfieldKeyPressHandler_
-    );
+		handler.listen(
+			this.emailEditConfirmButton_,
+			goog.events.EventType.CLICK,
+			this.confirmButtonPressHandler_
+		);
 
-  };
+		handler.listen(
+			this.emailEditTextfield_,
+			goog.events.EventType.KEYDOWN,
+			this.textfieldKeyPressHandler_
+		);
 
-  EmailEdit.prototype.editButtonPressHandler_ = function() {
-    this.emailEditTextfield_.value = this.emailInfoText_.innerText.trim();
-    this.toggleEmailElements_();
-  };
+	};
 
-  EmailEdit.prototype.confirmButtonPressHandler_ = function() {
-    var val_ = this.emailEditTextfield_.value.trim();
+	/**
+	 * @private
+	 */	
+	EmailEdit.prototype.editButtonPressHandler_ = function() {
+		this.emailEditTextfield_.value = this.emailInfoText_.innerText.trim();
+		this.toggleEmailElements_();
+	};
 
-    if (val_) {
-      this.emailInfoText_.innerText = val_;
-    }
+	/**
+	 * @private
+	 */	
+	EmailEdit.prototype.confirmButtonPressHandler_ = function() {
+		var val_ = this.emailEditTextfield_.value.trim();
 
-    this.toggleEmailElements_(); 
-  };
+		if (val_) {
+			this.emailInfoText_.innerText = val_;
+		}
 
-  EmailEdit.prototype.toggleEmailElements_ = function() {
-    goog.dom.classlist.toggle(
-      this.emailInfoText_,
-      EmailEdit.CssClass.HIDDEN
-    );
+		this.toggleEmailElements_(); 
+	};
 
-    goog.dom.classlist.toggle(
-      this.emailInfoEditButton_,
-      EmailEdit.CssClass.HIDDEN
-    );
+	/**
+	 * @private
+	 */	
+	EmailEdit.prototype.toggleEmailElements_ = function() {
+		goog.dom.classlist.toggle(
+			this.emailInfoText_,
+			EmailEdit.CssClass.HIDDEN
+		);
 
-    goog.dom.classlist.toggle(
-      this.emailEditElements_,
-      EmailEdit.CssClass.HIDDEN
-    );
-  };
+		goog.dom.classlist.toggle(
+			this.emailInfoEditButton_,
+			EmailEdit.CssClass.HIDDEN
+		);
 
-  EmailEdit.prototype.textfieldKeyPressHandler_ = function(key) {
+		goog.dom.classlist.toggle(
+			this.emailEditElements_,
+			EmailEdit.CssClass.HIDDEN
+		);
+	};
 
-    if (key.keyCode == 13) {
-      this.confirmButtonPressHandler_();
-      return;
-    }
+	/**
+	 * @private
+	 */	
+	EmailEdit.prototype.textfieldKeyPressHandler_ = function(key) {
 
-    if (key.keyCode == 27) {
-      this.toggleEmailElements_();
-      return;
-    }
-  };
+		if (key.keyCode == 13) {
+			this.confirmButtonPressHandler_();
+			return;
+		}
+
+		if (key.keyCode == 27) {
+			this.toggleEmailElements_();
+			return;
+		}
+	};
 
 });
 goog.provide('tr.lProfile.UserNameEdit');
@@ -27052,22 +27110,66 @@ goog.require('goog.events');
 goog.require('goog.soy');
 goog.require('goog.ui.Component');
 
+/**
+* User name edit component
+* @constructor
+* @extends {goog.ui.Component}
+*/
 tr.lProfile.UserNameEdit = function() {
 	goog.base(this);
 
+	/**
+	* Dom element
+	* @type {Element}
+	* @private
+	*/
 	this.nameInfoElements_ = null;
+
+	/**
+	* Dom element
+	* @type {Element}
+	* @private
+	*/
 	this.nameInfoText_ = null;
+
+	/**
+	* Dom element
+	* @type {Element}
+	* @private
+	*/
 	this.nameInfoEditButton_ = null;
+
+	/**
+	* Dom element
+	* @type {Element}
+	* @private
+	*/
 	this.nameEditElements_ = null;
+
+	/**
+	* Dom element
+	* @type {Element}
+	* @private
+	*/
 	this.nameEditTextfield_ = null;
+
+	/**
+	* Dom element
+	* @type {Element}
+	* @private
+	*/
 	this.nameEditConfirmButton_ = null;
-};
+	};
 
 goog.inherits(tr.lProfile.UserNameEdit, goog.ui.Component);
 
 goog.scope(function() {
 	var UserNameEdit = tr.lProfile.UserNameEdit;
 
+	/**
+	* CSS-class enum
+	* @enum {string}
+	*/
 	UserNameEdit.CssClass = {
 		ROOT: 'b-user-name',
 		NAME_INFO_ELEMENTS: 'b-user-name__info-elements',
@@ -27077,106 +27179,126 @@ goog.scope(function() {
 		NAME_EDIT_TEXTFIELD: 'b-edit-elements__edit-input',
 		NAME_EDIT_CONFIRM_BUTTON: 'b-edit-elements__confirm-button',
 		HIDDEN: 'g-hidden'
-  };
+	};
 
-  UserNameEdit.prototype.decorateInternal = function(element) {
-    goog.base(this, 'decorateInternal', element);
+	/** 
+	*@override
+	*/
+	UserNameEdit.prototype.decorateInternal = function(element) {
+		goog.base(this, 'decorateInternal', element);
 
-    this.nameInfoElements_ = goog.dom.getElementByClass(
-        UserNameEdit.CssClass.NAME_INFO_ELEMENTS,
-        element
-    );
+		this.nameInfoElements_ = goog.dom.getElementByClass(
+			UserNameEdit.CssClass.NAME_INFO_ELEMENTS,
+			element
+			);
 
-    this.nameInfoText_ = goog.dom.getElementByClass(
-        UserNameEdit.CssClass.NAME_INFO_TEXT,
-        element
-    );
+		this.nameInfoText_ = goog.dom.getElementByClass(
+			UserNameEdit.CssClass.NAME_INFO_TEXT,
+			element
+			);
 
-    this.nameInfoEditButton_ = goog.dom.getElementByClass(
-        UserNameEdit.CssClass.NAME_INFO_EDIT_BUTTON,
-        element
-    );
+		this.nameInfoEditButton_ = goog.dom.getElementByClass(
+			UserNameEdit.CssClass.NAME_INFO_EDIT_BUTTON,
+			element
+			);
 
-    this.nameEditElements_ = goog.dom.getElementByClass(
-        UserNameEdit.CssClass.NAME_EDIT_ELEMENTS,
-        element
-    );
+		this.nameEditElements_ = goog.dom.getElementByClass(
+			UserNameEdit.CssClass.NAME_EDIT_ELEMENTS,
+			element
+			);
 
-    this.nameEditTextfield_ = goog.dom.getElementByClass(
-        UserNameEdit.CssClass.NAME_EDIT_TEXTFIELD,
-        element
-    );
+		this.nameEditTextfield_ = goog.dom.getElementByClass(
+			UserNameEdit.CssClass.NAME_EDIT_TEXTFIELD,
+			element
+			);
 
-    this.nameEditConfirmButton_ = goog.dom.getElementByClass(
-        UserNameEdit.CssClass.NAME_EDIT_CONFIRM_BUTTON,
-        element
-    );
-  };
+		this.nameEditConfirmButton_ = goog.dom.getElementByClass(
+			UserNameEdit.CssClass.NAME_EDIT_CONFIRM_BUTTON,
+			element
+			);
 
-  UserNameEdit.prototype.enterDocument = function() {
-        goog.base(this, 'enterDocument');
+		this.nameInfoElements_ = 12334;
+	};
 
-        var handler = this.getHandler();
+	/**
+	* @override
+	*/ 
+	UserNameEdit.prototype.enterDocument = function() {
+		goog.base(this, 'enterDocument');
 
-        handler.listen(
-          this.nameInfoEditButton_,
-          goog.events.EventType.CLICK,
-          this.editButtonPressHandler_
-        );
+		var handler = this.getHandler();
 
-        handler.listen(
-          this.nameEditConfirmButton_,
-          goog.events.EventType.CLICK,
-          this.confirmButtonPressHandler_
-        );
+		handler.listen(
+			this.nameInfoEditButton_,
+			goog.events.EventType.CLICK,
+			this.editButtonPressHandler_
+			);
 
-        handler.listen(
-          this.nameEditTextfield_,
-          goog.events.EventType.KEYDOWN,
-          this.textfieldKeyPressHandler_
-        );
+		handler.listen(
+			this.nameEditConfirmButton_,
+			goog.events.EventType.CLICK,
+			this.confirmButtonPressHandler_
+			);
 
-    };
+		handler.listen(
+			this.nameEditTextfield_,
+			goog.events.EventType.KEYDOWN,
+			this.textfieldKeyPressHandler_
+			);
 
-    UserNameEdit.prototype.editButtonPressHandler_ = function() {
-      this.nameEditTextfield_.value = this.nameInfoText_.innerText.trim();
-      this.toggleNameElements_();
-    };
+	};
 
-    UserNameEdit.prototype.confirmButtonPressHandler_ = function() {
-      var val_ = this.nameEditTextfield_.value.trim();
+	/**
+	* @private
+	*/ 
+	UserNameEdit.prototype.editButtonPressHandler_ = function() {
+		this.nameEditTextfield_.value = this.nameInfoText_.innerText.trim();
+		this.toggleNameElements_();
+	};
 
-      if (val_) {
-        this.nameInfoText_.innerText = val_;
-      }
+	/**
+	* @private
+	*/ 
+	UserNameEdit.prototype.confirmButtonPressHandler_ = function() {
+		var val_ = this.nameEditTextfield_.value.trim();
 
-      this.toggleNameElements_(); 
-    };
+		if (val_) {
+			this.nameInfoText_.innerText = val_;
+		}
 
-    UserNameEdit.prototype.toggleNameElements_ = function() {
-    	goog.dom.classlist.toggle(
-            this.nameInfoElements_,
-            UserNameEdit.CssClass.HIDDEN
-        );
+		this.toggleNameElements_(); 
+	};
 
-    	goog.dom.classlist.toggle(
-            this.nameEditElements_,
-            UserNameEdit.CssClass.HIDDEN
-        );
-    };
+	/**
+	* @private
+	*/ 
+	UserNameEdit.prototype.toggleNameElements_ = function() {
+		goog.dom.classlist.toggle(
+			this.nameInfoElements_,
+			UserNameEdit.CssClass.HIDDEN
+			);
 
-    UserNameEdit.prototype.textfieldKeyPressHandler_ = function(key) {
+		goog.dom.classlist.toggle(
+			this.nameEditElements_,
+			UserNameEdit.CssClass.HIDDEN
+			);
+	};
 
-      if (key.keyCode == 13) {
-        this.confirmButtonPressHandler_();
-        return;
-      }
+	/**
+	* @private
+	*/ 
+	UserNameEdit.prototype.textfieldKeyPressHandler_ = function(key) {
 
-      if (key.keyCode == 27) {
-        this.toggleNameElements_();
-        return;
-      }
-    };
+		if (key.keyCode == 13) {
+			this.confirmButtonPressHandler_();
+			return;
+		}
+
+		if (key.keyCode == 27) {
+			this.toggleNameElements_();
+			return;
+		}
+	};
 
 });
 goog.provide('tr.lProfile');
@@ -27184,6 +27306,9 @@ goog.provide('tr.lProfile');
 goog.require('tr.lProfile.UserNameEdit');
 goog.require('tr.lProfile.EmailEdit'); 
 
+/**
+ * creates instances of tr.lProfile.UserNameEdit and tr.lProfile.EmailEdit
+ */
 jQuery(function() {
 	var userNameElementsBlock = goog.dom.getElementByClass(
     tr.lProfile.UserNameEdit.CssClass.ROOT
