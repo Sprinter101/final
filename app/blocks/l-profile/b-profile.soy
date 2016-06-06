@@ -1,50 +1,22 @@
-{namespace tr.lProfile.Template}
+{namespace tr.bProfile.Template}
 
 /**
-* Main template
-* @param? params {
-*     name: ?string
-* }
-*/
-{template .base autoescape="strict" kind="html"}
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		{call .head_ /}
-	</head>
-	<body>
-		{call .body_ data="all"/}
-		{call .footer_ /}
-	</body>	
-{/template}
-
-/**
-* Head template
-*/
-{template .head_ autoescape="strict" kind="html" private="true"}
-	<meta charset="UTF-8">
-	<title>Профиль</title>
-	<link rel="stylesheet" href="css/anotherProfile.css">
-	<script src="js/jquery-2.2.3.min.js"></script>
-{/template}
-
-/**
-* Body template
+* Profile template
 * @param? params {?}
 */
-{template .body_ autoescape="strict" kind="html" private="true"}
-	<div class="l-profile">
+{template .base autoescape="strict" kind="html"}
+	<div class="b-profile">
 
-		<div class="l-profile__info">
-			<div class="l-profile__user-avatar">
+		<div class="b-profile__info">
+			<div class="b-profile__user-avatar">
 				{call .userAvatar_ /}
 			</div>
-			<div class="l-profile__trusted-count">
+			<div class="b-profile__trusted-count">
 				<div class="b-trusted-count">
 					<span class="b-trusted-count__text">100</span>
 				</div>
 			</div>
-			<div class="l-profile__user-name">
+			<div class="b-profile__user-name">
 				<div class="b-user-name">
 					<div class="b-user-name__info-elements">
 						<div class="b-user-name__text">{$params.name}</div>
@@ -60,7 +32,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="l-profile__user-profession">
+			<div class="b-profile__user-profession">
 				<div class="b-user-profession">
 					<div class="b-user-profession__icon">
 						<img src="img/trusted_normal.png" alt="" class="b-user-profession__icon-image">
@@ -70,14 +42,14 @@
 			</div>
 		</div>
 
-		<div class="l-profile__icons">
+		<div class="b-profile__icons">
 			<div class="b-profile-icons">
 				<div class="b-profile-icons__icon profile-icons__icon-trusted"></div>
 				<div class="b-profile-icons__icon profile-icons__icon-profile"></div>
 			</div>
 		</div>
 
-		<div class="l-profile__comments">
+		<div class="b-profile__comments">
 			<div class="b-comments">
 
 				<div class="b-comments__comment">
@@ -91,7 +63,7 @@
 			</div>
 		</div>
 
-		<div class="l-profile__contacts">
+		<div class="b-profile__contacts">
 			<div class="b-contacts">
 
 				<div class="b-contacts__contact">
@@ -155,11 +127,4 @@
 	<div class="b-user-avatar">
 		<img class="b-user-avatar__image" src="img/image_empty_profile.png" alt="">
 	</div>
-{/template}
-
-/**
-* Footer template
-*/
-{template .footer_ autoescape="strict" kind="html" private="true"}
-	<script src="js/l-profile.js"></script>
 {/template}

@@ -21,7 +21,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', function(req, res) {
-	var html = soy.render('tr.lProfile.Template.base', {params: {name: "Руслан Иванцов"}});
+	var html = soy.render('tr.lProfile.Template.base', {params: {name: "Александр Петров"}});
 
     res.header('Content-Type', 'text/html; charset=utf-8');
     res.end(html);	
