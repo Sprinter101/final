@@ -40,7 +40,7 @@ gulp.task('scripts', function() {
     command += ' --namespace="tr.lProfile"';    
     if(compile) {
       command += ' --output_mode=compiled';
-      command += ' --compiler_jar=compiler.jar';
+      command += ' --compiler_jar=tools/compiler.jar';
       command += ' --compiler_flags="--compilation_level=ADVANCED_OPTIMIZATIONS"';
     } else {
       command += ' --output_mode="script"';
